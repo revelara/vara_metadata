@@ -5,7 +5,7 @@ Get all the metadata json files based on Vara Network runtimes and merge it into
 <br>
 Python 3.11 is required and the next dependencies:<br>
 
-**pip3 install requests**
+**pip install requests**
 <br>
 <br>Also you will need to get a TOKEN_API for subscan that you can get creating an account here:<br>
 
