@@ -1,4 +1,5 @@
-# vara_metadata
+# Vara Metadata
+
 Get all the metadata json files based on Vara Network runtimes and merge it into a single json file to keep all the history
 
 Python 3.11 is required and the next dependencies:
