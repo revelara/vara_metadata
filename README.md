@@ -7,18 +7,18 @@ Python 3.11 is required and the next dependencies:<br>
 
 **pip3 install requests**
 <br>
-Also you will need to get a TOKEN_API for subscan that you can get creating an account here:<br>
+<br>Also you will need to get a TOKEN_API for subscan that you can get creating an account here:<br>
 
 **https://subscan.io/ 
 API -> Get API Key**
 <br>
-Once you have your API KEY open the file subscan.py and change:<br>
+<br>Once you have your API KEY open the file subscan.py and change:<br>
 **YOUR_SUBSCAN_API_KEY with your API KEY**<br>
 <br>
-Now you're ready to run the main file with:<br>
+<br>Now you're ready to run the main file with:<br>
 **python vara_metadata.py**<br>
 <br>
 <br>
-This will generate all the metadata json files per runtime and will merge in a single file called runtime.json<br>
+<br>This will generate all the metadata json files per runtime and will merge in a single file called runtime.json<br>
 <br>
 **¡¡ Have fun !!**
