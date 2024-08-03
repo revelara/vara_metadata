@@ -7,6 +7,9 @@ import requests
 import json
 import os
 
+#API for get metadata based on the runtime
+url = "https://vara.api.subscan.io/api/scan/runtime/metadata"
+
 # Replace with your actual subscan API key
 api_key = "ac5cf1251493454991e62c483bceea8f"  
 
@@ -66,35 +69,34 @@ def merge_dicts(main_dict, new_dict):
                         main_dict[key].append(value)
 
 
-#API for get metadata based on the runtime
-url = "https://vara.api.subscan.io/api/scan/runtime/metadata"
-runtimes = get_runtimes_as_list()
-
-#Empty runtimes because the YOUR_SUBSCAN_API_KEY is wrong
-if not runtimes:
-    print ("Please change YOUR_SUBSCAN_API_KEY with your own Subscan API Key")
-
-#Creates a json file per each runtime
-"""
-for index, (key, runtime) in enumerate( runtimes.items()):
-        payload = { "spec": runtime }
-        response = requests.post(url, headers=headers, json=payload)
-        if response.status_code == 200:
-            with open(str(runtime)+'.json', 'w') as json_file:
-                json.dump(response.json(), json_file, indent=4)
-            print ("Metadata of runtime "+ str(runtime) + " saved into the file :" + str(runtime) + ".json")
-        else:
-            print(str(response.text))
-"""
 
 
 def main():
+    
+    #Get a list of runtimes
+    runtimes = get_runtimes_as_list()
 
-    # Eliminar el archivo metadata.json si existe
+    #Empty runtimes because the YOUR_SUBSCAN_API_KEY is wrong
+    if not runtimes:
+        print ("Please change YOUR_SUBSCAN_API_KEY with your own Subscan API Key")
+
+    #Creates a json file per each runtime
+    for index, (key, runtime) in enumerate( runtimes.items()):
+            payload = { "spec": runtime }
+            response = requests.post(url, headers=headers, json=payload)
+            if response.status_code == 200:
+                with open(str(runtime)+'.json', 'w') as json_file:
+                    json.dump(response.json(), json_file, indent=4)
+                print ("Metadata of runtime "+ str(runtime) + " saved into the file :" + str(runtime) + ".json")
+            else:
+                print(str(response.text))
+
+
+    # Deletes the metadata.json if exists
     if os.path.exists('metadata.json'):
         os.remove('metadata.json')
 
-    directory = '.'  # Change this to your JSON directory path
+    directory = '.'
     json_files = read_json_files(directory)
 
     if not json_files:
