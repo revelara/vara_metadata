@@ -11,7 +11,7 @@ import os
 url = "https://vara.api.subscan.io/api/scan/runtime/metadata"
 
 # Replace with your actual subscan API key
-api_key = "ac5cf1251493454991e62c483bceea8f"  
+api_key = "YOUR_SUBSCAN_API_KEY"  
 
 # Define the headers
 headers = {
