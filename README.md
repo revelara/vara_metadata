@@ -12,13 +12,13 @@ Python 3.11 is required and the next dependencies:<br>
 **https://subscan.io/ 
 API -> Get API Key**
 <br>
-<br>Once you have your API KEY open the file subscan.py and change:<br>
+<br>Once you have your API KEY open the file vara_metadata.py and change:<br>
 **YOUR_SUBSCAN_API_KEY with your API KEY**<br>
 <br>
 <br>Now you're ready to run the main file with:<br>
 **python vara_metadata.py**<br>
 <br>
 <br>
-<br>This will generate all the metadata json files per runtime and will merge in a single file called runtime.json<br>
+<br>This will generate all the metadata json files per runtime and will merge in a single file called metadata.json<br>
 <br>
 **¡¡ Have fun !!**
